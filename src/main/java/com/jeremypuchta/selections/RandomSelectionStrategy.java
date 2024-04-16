@@ -1,4 +1,6 @@
-package com.jeremypuchta;
+package com.jeremypuchta.selections;
+
+import com.jeremypuchta.BackendInstance;
 
 import java.util.List;
 import java.util.Map;

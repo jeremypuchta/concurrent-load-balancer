@@ -1,5 +1,7 @@
 package com.jeremypuchta;
 
+import com.jeremypuchta.selections.RandomSelectionStrategy;
+
 public class Main {
     public static void main(String[] args) {
         LoadBalancer loadBalancer = new LoadBalancer(new RandomSelectionStrategy());

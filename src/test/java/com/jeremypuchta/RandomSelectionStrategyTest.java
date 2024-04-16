@@ -1,5 +1,7 @@
 package com.jeremypuchta;
 
+import com.jeremypuchta.selections.RandomSelectionStrategy;
+import com.jeremypuchta.selections.SelectionStrategy;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

@@ -1,6 +1,7 @@
 package com.jeremypuchta;
 
 import com.jeremypuchta.exceptions.MaximumCapacityException;
+import com.jeremypuchta.selections.RandomSelectionStrategy;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

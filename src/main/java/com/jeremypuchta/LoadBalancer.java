@@ -1,6 +1,7 @@
 package com.jeremypuchta;
 
 import com.jeremypuchta.exceptions.MaximumCapacityException;
+import com.jeremypuchta.selections.SelectionStrategy;
 
 import java.util.Map;
 import java.util.Optional;
