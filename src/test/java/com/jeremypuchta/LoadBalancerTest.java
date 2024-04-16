@@ -11,13 +11,13 @@ class LoadBalancerTest {
 
     @BeforeEach
     void setUp() {
-        loadBalancer = new LoadBalancer();
+        loadBalancer = new LoadBalancer(new RandomSelectionStrategy());
     }
 
     @Test
     void shouldRegisterInstance() {
         loadBalancer.register(new BackendInstance("1.2.3.4"));
-        assertThat(loadBalancer.instances).isNotEmpty();
+        assertThat(loadBalancer.getInstances()).isNotEmpty();
     }
 
     @Test
@@ -44,7 +44,7 @@ class LoadBalancerTest {
     @Test
     void shouldThrowWhenMaximumCapacityIsReached() {
         for (int i = 0; i < 10; i++) {
-            loadBalancer.instances.put("" + i, new BackendInstance("" + 1));
+            loadBalancer.getInstances().put("" + i, new BackendInstance("" + 1));
         }
         assertThatThrownBy(() -> loadBalancer.register(new BackendInstance("11")))
                 .isInstanceOf(MaximumCapacityException.class)
