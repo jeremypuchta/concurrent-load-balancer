@@ -12,7 +12,7 @@ public class LoadBalancer {
 
     public void register(final BackendInstance instance) {
         validateRegistration(instance);
-
+        instances.put(instance.getAddress(), instance);
     }
 
     private void validateRegistration(BackendInstance instance) {
@@ -28,6 +28,5 @@ public class LoadBalancer {
         if (instances.size() == MAX_INSTANCES) {
             throw new MaximumCapacityException("Maximum capacity is reached. Cannot register another instance.");
         }
-        instances.put(instance.getAddress(), instance);
     }
 }

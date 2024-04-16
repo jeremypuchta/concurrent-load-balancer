@@ -2,6 +2,9 @@ package com.jeremypuchta;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        LoadBalancer loadBalancer = new LoadBalancer();
+        loadBalancer.register(new BackendInstance("1.2.3.4"));
+        loadBalancer.register(new BackendInstance("0.0.0.0"));
+        System.out.println(loadBalancer.instances.toString());
     }
 }
